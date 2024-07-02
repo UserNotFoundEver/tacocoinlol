@@ -9,6 +9,42 @@
     body {
       background-color: #f9fafb;
     }
+    .meme-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 50;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+    }
+    .modal-caption {
+      text-align: center;
+      color: white;
+      padding: 10px;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -35,17 +71,50 @@
     <div class="text-center my-8">
       <h3 class="text-2xl font-bold">Tokenomics</h3>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
-      <div class="bg-gray-200 h-48 flex items-center justify-center">Meme 1</div>
-      <div class="bg-gray-200 h-48 flex items-center justify-center">Meme 2</div>
-      <div class="bg-gray-200 h-48 flex items-center justify-center">Meme 3</div>
-      <div class="bg-gray-200 h-48 flex items-center justify-center">Meme 4</div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+      <div class="bg-gray-200 h-48 flex items-center justify-center">
+        <img src="btc_price.jpeg" alt="Meme 1" class="meme-image" onclick="openModal(this)">
+      </div>
+      <div class="bg-gray-200 h-48 flex items-center justify-center">
+        <img src="crypto_call_your_mom_rug_meme.jpeg" alt="Meme 2" class="meme-image" onclick="openModal(this)">
+      </div>
+      <div class="bg-gray-200 h-48 flex items-center justify-center">
+        <img src="crypto_millionaire.jpeg" alt="Meme 3" class="meme-image" onclick="openModal(this)">
+      </div>
+      <div class="bg-gray-200 h-48 flex items-center justify-center">
+        <img src="taco_coin_meme.jpeg" alt="Meme 4" class="meme-image" onclick="openModal(this)">
+      </div>
+      <div class="bg-gray-200 h-48 flex items-center justify-center">
+        <img src="taco_coin_year2050.jpeg" alt="Meme 5" class="meme-image" onclick="openModal(this)">
+      </div>
+      <div class="bg-gray-200 h-48 flex items-center justify-center">
+        <img src="patience_for_tacocoin.jpeg" alt="Meme 6" class="meme-image" onclick="openModal(this)">
+      </div>
     </div>
   </main>
+
+  <!-- Modal for image display -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption" class="modal-caption"></div>
+  </div>
 
   <!-- Footer -->
   <footer class="bg-gray-800 text-white text-center p-4">
     <p>Taco is a meme that promises no financial return nor has a formal roadmap</p>
   </footer>
+
+  <script>
+    function openModal(element) {
+      document.getElementById("myModal").style.display = "block";
+      document.getElementById("img01").src = element.src;
+      document.getElementById("caption").innerText = element.alt;
+    }
+
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+  </script>
 </body>
 </html>
