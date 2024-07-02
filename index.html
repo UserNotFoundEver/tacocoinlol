@@ -5,24 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Taco Coin LOL</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #f9fafb;
+    }
+  </style>
 </head>
-<body class="bg-black text-yellow-400 flex flex-col items-center justify-center min-h-screen p-4">
+<body class="flex flex-col min-h-screen">
+  <!-- Header -->
+  <header class="bg-yellow-500 p-4 text-white text-center">
+    <h1 class="text-4xl font-bold">Taco Coin LOL</h1>
+  </header>
 
-  <h1 class="text-4xl font-bold text-center">Taco Coin LOL</h1>
-
-  <div class="mt-8 text-center">
-    <a href="https://base.blockscout.com/address/0x738F3F9cb388D4A862faeaFD8EfB34590c20a5e9" target="_blank" class="text-xl underline break-all">
-      CONTRACT ADDRESS: 0x738F3F9cb388D4A862faeaFD8EfB34590c20a5e9
-    </a>
+  <!-- Buttons Section -->
+  <div class="text-center my-8">
+    <a href="https://www.dextools.io/app/en/base/pair-explorer/0x31ecfef875590a9decc7acafd96fd6ae626bdcdf?t=1719894511898" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full mx-2">DEXTOOLS</a>
+    <a href="https://x.com/tacocoinlol" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full mx-2">Twitter</a>
   </div>
 
-  <div class="mt-8">
-    <img src="tacocoinlol.jpeg" alt="Taco Coin" class="max-w-full h-auto">
-  </div>
+  <!-- Main Section -->
+  <main class="flex-grow">
+    <div class="text-center p-4">
+      <p class="text-lg mb-4">Taco Coin is the funniest thing to happen in the crypto world, lol. Imagine a coin that celebrates tacos every day, lol. With Taco Coin, every transaction is a fiesta, and every holder gets a sprinkle of taco magic, lol. It's not just about the value; it's about the laughter and the fun, lol. Taco Coin brings the community together with hilarious memes and epic taco-themed events, lol. We're on Base L2, making sure our transactions are as smooth as a perfect taco, lol. Join us and make every day a Taco Tuesday, because why not, lol? Remember, it's all in good fun, and the only promise we make is to keep the laughter rolling, lol!</p>
+      <img src="tacocoinlol.jpeg" alt="Taco Coin LOL" class="mx-auto mb-4">
+    </div>
+    <div class="text-center p-4 bg-gray-200">
+      <h2 class="text-4xl font-bold">Every day is Taco Tuesday, lol</h2>
+    </div>
+    <div class="text-center my-8">
+      <h3 class="text-2xl font-bold">Tokenomics</h3>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+      <div class="bg-gray-200 h-48 flex items-center justify-center">Meme 1</div>
+      <div class="bg-gray-200 h-48 flex items-center justify-center">Meme 2</div>
+      <div class="bg-gray-200 h-48 flex items-center justify-center">Meme 3</div>
+      <div class="bg-gray-200 h-48 flex items-center justify-center">Meme 4</div>
+    </div>
+  </main>
 
-  <footer class="mt-8 text-center">
-    Taco is a meme that promises no financial return nor has a formal roadmap
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center p-4">
+    <p>Taco is a meme that promises no financial return nor has a formal roadmap</p>
   </footer>
-
 </body>
 </html>
