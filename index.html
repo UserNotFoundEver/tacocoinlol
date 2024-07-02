@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,14 +39,24 @@
       color: white;
       padding: 10px;
     }
-    .close {
+    .close, .prev, .next {
       position: absolute;
-      top: 20px;
-      right: 35px;
+      top: 50%;
       color: white;
       font-size: 40px;
       font-weight: bold;
       cursor: pointer;
+      user-select: none;
+    }
+    .close {
+      right: 35px;
+      top: 20px;
+    }
+    .prev {
+      left: 10px;
+    }
+    .next {
+      right: 10px;
     }
   </style>
 </head>
@@ -78,22 +87,22 @@
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
       <div class="bg-gray-200 h-48 flex items-center justify-center">
-        <img src="btc_price.jpeg" alt="Meme 1" class="meme-image" onclick="openModal(this)">
+        <img src="btc_price.jpeg" alt="Meme 1" class="meme-image" onclick="openModal(0)">
       </div>
       <div class="bg-gray-200 h-48 flex items-center justify-center">
-        <img src="crypto_call_your_mom_rug_meme.jpeg" alt="Meme 2" class="meme-image" onclick="openModal(this)">
+        <img src="crypto_call_your_mom_rug_meme.jpeg" alt="Meme 2" class="meme-image" onclick="openModal(1)">
       </div>
       <div class="bg-gray-200 h-48 flex items-center justify-center">
-        <img src="crypto_millionaire.jpeg" alt="Meme 3" class="meme-image" onclick="openModal(this)">
+        <img src="crypto_millionaire.jpeg" alt="Meme 3" class="meme-image" onclick="openModal(2)">
       </div>
       <div class="bg-gray-200 h-48 flex items-center justify-center">
-        <img src="taco_coin_meme.jpeg" alt="Meme 4" class="meme-image" onclick="openModal(this)">
+        <img src="taco_coin_meme.jpeg" alt="Meme 4" class="meme-image" onclick="openModal(3)">
       </div>
       <div class="bg-gray-200 h-48 flex items-center justify-center">
-        <img src="taco_coin_year2050.jpeg" alt="Meme 5" class="meme-image" onclick="openModal(this)">
+        <img src="taco_coin_year2050.jpeg" alt="Meme 5" class="meme-image" onclick="openModal(4)">
       </div>
       <div class="bg-gray-200 h-48 flex items-center justify-center">
-        <img src="patience_for_tacocoin.jpeg" alt="Meme 6" class="meme-image" onclick="openModal(this)">
+        <img src="patience_for_tacocoin.jpeg" alt="Meme 6" class="meme-image" onclick="openModal(5)">
       </div>
     </div>
   </main>
@@ -103,6 +112,8 @@
     <span class="close" onclick="closeModal()">&times;</span>
     <img class="modal-content" id="img01">
     <div id="caption" class="modal-caption"></div>
+    <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+    <span class="next" onclick="changeSlide(1)">&#10095;</span>
   </div>
 
   <!-- Footer -->
@@ -111,14 +122,41 @@
   </footer>
 
   <script>
-    function openModal(element) {
+    const images = [
+      { src: 'btc_price.jpeg', alt: 'Meme 1' },
+      { src: 'crypto_call_your_mom_rug_meme.jpeg', alt: 'Meme 2' },
+      { src: 'crypto_millionaire.jpeg', alt: 'Meme 3' },
+      { src: 'taco_coin_meme.jpeg', alt: 'Meme 4' },
+      { src: 'taco_coin_year2050.jpeg', alt: 'Meme 5' },
+      { src: 'patience_for_tacocoin.jpeg', alt: 'Meme 6' }
+    ];
+    let currentIndex = 0;
+
+    function openModal(index) {
+      currentIndex = index;
       document.getElementById("myModal").style.display = "block";
-      document.getElementById("img01").src = element.src;
-      document.getElementById("caption").innerText = element.alt;
+      showSlide(currentIndex);
     }
 
     function closeModal() {
       document.getElementById("myModal").style.display = "none";
+    }
+
+    function showSlide(index) {
+      const modalImg = document.getElementById("img01");
+      const captionText = document.getElementById("caption");
+      modalImg.src = images[index].src;
+      captionText.innerText = images[index].alt;
+    }
+
+    function changeSlide(direction) {
+      currentIndex += direction;
+      if (currentIndex >= images.length) {
+        currentIndex = 0;
+      } else if (currentIndex < 0) {
+        currentIndex = images.length - 1;
+      }
+      showSlide(currentIndex);
     }
   </script>
 </body>
