@@ -84,6 +84,16 @@
     </div>
     <div class="text-center my-8">
       <h3 class="text-2xl font-bold">Tokenomics</h3>
+      <h2>Airdrop for Taco NFT Drop Holders</h2>
+      <div class="flex justify-center">
+        <iframe
+          src="https://embed.ipfscdn.io/ipfs/bafybeicd3qfzelz4su7ng6n523virdsgobrc5pcbarhwqv3dj3drh645pi/?contract=0xE6E1e3575A2077bb82724ba54C4d80EE2F611206&chain=%7B%22name%22%3A%22Base%22%2C%22chain%22%3A%22ETH%22%2C%22rpc%22%3A%5B%22https%3A%2F%2F8453.rpc.thirdweb.com%2F%24%7BTHIRDWEB_API_KEY%7D%22%5D%2C%22nativeCurrency%22%3A%7B%22name%22%3A%22Ether%22%2C%22symbol%22%3A%22ETH%22%2C%22decimals%22%3A18%7D%2C%22shortName%22%3A%22base%22%2C%22chainId%22%3A8453%2C%22testnet%22%3Afalse%2C%22slug%22%3A%22base%22%2C%22icon%22%3A%7B%22url%22%3A%22ipfs%3A%2F%2FQmW5Vn15HeRkScMfPcW12ZdZcC2yUASpu6eCsECRdEmjjj%2Fbase-512.png%22%2C%22width%22%3A512%2C%22height%22%3A512%2C%22format%22%3A%22png%22%7D%7D&clientId=&theme=light&primaryColor=purple"
+          width="600px"
+          height="600px"
+          style="max-width:100%;"
+          frameborder="0"
+        ></iframe>
+      </div>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
       <div class="bg-gray-200 h-48 flex items-center justify-center">
@@ -118,46 +128,4 @@
 
   <!-- Footer -->
   <footer class="bg-gray-800 text-white text-center p-4">
-    <p>Taco is a meme that promises no financial return nor has a formal roadmap</p>
-  </footer>
-
-  <script>
-    const images = [
-      { src: 'btc_price.jpeg', alt: 'Meme 1' },
-      { src: 'crypto_call_your_mom_rug_meme.jpeg', alt: 'Meme 2' },
-      { src: 'crypto_millionaire.jpeg', alt: 'Meme 3' },
-      { src: 'taco_coin_meme.jpeg', alt: 'Meme 4' },
-      { src: 'taco_coin_year2050.jpeg', alt: 'Meme 5' },
-      { src: 'patience_for_tacocoin.jpeg', alt: 'Meme 6' }
-    ];
-    let currentIndex = 0;
-
-    function openModal(index) {
-      currentIndex = index;
-      document.getElementById("myModal").style.display = "block";
-      showSlide(currentIndex);
-    }
-
-    function closeModal() {
-      document.getElementById("myModal").style.display = "none";
-    }
-
-    function showSlide(index) {
-      const modalImg = document.getElementById("img01");
-      const captionText = document.getElementById("caption");
-      modalImg.src = images[index].src;
-      captionText.innerText = images[index].alt;
-    }
-
-    function changeSlide(direction) {
-      currentIndex += direction;
-      if (currentIndex >= images.length) {
-        currentIndex = 0;
-      } else if (currentIndex < 0) {
-        currentIndex = images.length - 1;
-      }
-      showSlide(currentIndex);
-    }
-  </script>
-</body>
-</html>
+    <p>Taco is a meme that promises no
